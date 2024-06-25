@@ -1,4 +1,4 @@
-# My Project
+# MovieDB
 
 This is a full-stack project with a React frontend and a Node.js/Express backend.
 
@@ -18,12 +18,12 @@ Follow these instructions to get a copy of the project up and running on your lo
 git clone https://github.com/aphiweagama/moviedb.git
 cd moviedb
 
-Database Setup
+### Database Setup
 
 1. Create a databse on RDBMS and name it moviedb
 2. Import the dump on db folder located in the root directory of this application
 
-Backend Setup
+### Backend Setup
 
 1. Navigate to the backend directory
   ```bash
@@ -39,7 +39,7 @@ Backend Setup
   DB_PASSWORD=your_password
   DB_NAME=moviedb
 
-Frontend Setup
+### Frontend Setup
 
 1. Navigate to the frontend directory:
 ```bash
@@ -48,7 +48,7 @@ Frontend Setup
 ```bash
   npm install
 
-Running the application
+### Running the application
 
 1. Navigate to the moviedb directory:
 ```bash
