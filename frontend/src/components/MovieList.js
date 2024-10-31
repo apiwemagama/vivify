@@ -24,23 +24,42 @@ const MovieList = ({ endpoint, query }) => {
     }, [endpoint, page, query]);
 
     return (
-        <div className="container">
-            <div>
+        <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {movies.map(movie => (
-                    <div key={movie.id} className="movie">
-                        <Link to={`/movie/${movie.id}`}>
-                            <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} />
-                        </Link>
-                        <h3>{movie.title}</h3>
+                    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-gray-500">
+                        <div key={movie.id}>
+                            <Link to={`/movie/${movie.id}`}>
+                                <img class="w-full h-full object-cover" src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} />
+                            </Link>
+                            <div className="px-6 py-4">
+                                <div className="font-bold text-sm mb-2">{movie.title}</div>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
-            <div className="pagination">
-                <button disabled={page === 1} onClick={() => setPage(page - 1)}>Previous</button>
-                <span>Page {page} of {totalPages}</span>
-                <button disabled={page === totalPages} onClick={() => setPage(page + 1)}>Next</button>
-            </div>
+            <div className="flex items-center justify-between p-4 bg-white shadow rounded-lg">
+    <button 
+        disabled={page === 1} 
+        onClick={() => setPage(page - 1)} 
+        className={`px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 ${page === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+    >
+        Previous
+    </button>
+    
+    <span className="text-gray-700">Page {page} of {totalPages}</span>
+    
+    <button 
+        disabled={page === totalPages} 
+        onClick={() => setPage(page + 1)} 
+        className={`px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 ${page === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
+    >
+        Next
+    </button>
+</div>
         </div>
+        
     );
 };
 
