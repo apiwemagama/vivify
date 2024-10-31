@@ -60,14 +60,15 @@ const MovieList = ({ endpoint, query }) => {
                 </div>
             </header>
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div className="font-bold text-white text-xl py-4">Continue watching</div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                     {movies.map(movie => (
                         <div className="max-w-sm rounded overflow-hidden shadow-lg">
                             <div key={movie.id}>
                                 <Link to={`/movie/${movie.id}`}>
                                     <img class="w-full h-full object-cover" src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} />
                                 </Link>
-                                <div className="px-6 py-4">
+                                <div className="py-4">
                                     <div className="font-bold text-white text-sm">{movie.title}</div>
                                 </div>
                             </div>

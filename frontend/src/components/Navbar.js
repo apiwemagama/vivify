@@ -22,7 +22,7 @@ const Navbar = () => {
         </button>
 
         {/* Nav Links (Desktop) */}
-        <div className={`hidden md:flex space-x-4`}>
+        <div className="hidden md:flex space-x-4">
           <Link to="/" className="text-white hover:text-gray-200">
             All
           </Link>
