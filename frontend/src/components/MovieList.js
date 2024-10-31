@@ -39,17 +39,16 @@ const MovieList = ({ endpoint, query }) => {
     }, []);
     return (
         <div className="container mx-auto px-4">
-            <header className="bg-gray-800 text-white">
-                <div className="mx-auto flex flex-col">
+            <header className="text-white relative">
+                <div className="mx-auto">
                     {backdropPath && (
-                            <img 
-                                className="w-full h-100 object-cover mb-4" 
-                                src={`https://image.tmdb.org/t/p/w500${backdropPath}`} 
-                                alt="Backdrop" 
-                            />
-                        )}
-                    <div className="px-4 flex flex-col items-start">
-                        
+                        <img 
+                            className="w-full h-100 object-cover mb-4" 
+                            src={`https://image.tmdb.org/t/p/w500${backdropPath}`} 
+                            alt="Backdrop" 
+                        />
+                    )}
+                    <div className="absolute inset-0 flex flex-col justify-center items-start px-4 bg-black bg-opacity-50"> {/* Overlay for text */}
                         <h1 className="text-3xl font-bold mb-2">Your Title Here</h1>
                         <h2 className="text-lg mb-4">{originalTitle}</h2>
                         <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow">
@@ -58,15 +57,6 @@ const MovieList = ({ endpoint, query }) => {
                     </div>
                 </div>
             </header>
-            <div>
-                {backdropPath && (
-                    <img 
-                        className="w-full h-100 object-cover mb-4" 
-                        src={`https://image.tmdb.org/t/p/w500${backdropPath}`} 
-                        alt="Backdrop" 
-                    />
-                )}
-            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {movies.map(movie => (
                     <div className="max-w-sm rounded overflow-hidden shadow-lg bg-gray-500">
