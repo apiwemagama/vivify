@@ -26,9 +26,6 @@ const Navbar = () => {
           <Link to="/" className="text-white hover:text-gray-200">
             All
           </Link>
-          <Link to="" className="text-white hover:text-gray-200">
-            Genre
-          </Link>
           <Link to="/favourites" className="text-white hover:text-gray-200">
             Favourites
           </Link>
@@ -42,13 +39,13 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden mt-2 space-y-2">
           <Link to="/" className="block text-white hover:text-gray-200" onClick={() => setIsOpen(false)}>
-            Home
-          </Link>
-          <Link to="/search" className="block text-white hover:text-gray-200" onClick={() => setIsOpen(false)}>
-            Search
+            All
           </Link>
           <Link to="/favourites" className="block text-white hover:text-gray-200" onClick={() => setIsOpen(false)}>
             Favourites
+          </Link>
+          <Link to="/search" className="block text-white hover:text-gray-200" onClick={() => setIsOpen(false)}>
+            Search
           </Link>
         </div>
       )}
