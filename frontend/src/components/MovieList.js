@@ -24,9 +24,8 @@ const MovieList = ({ endpoint, query }) => {
     }, [endpoint, page, query]);
 
     return (
-        <div>
-            <h2>Movies</h2>
-            <div className="movie-list">
+        <div className="container">
+            <div>
                 {movies.map(movie => (
                     <div key={movie.id} className="movie">
                         <Link to={`/movie/${movie.id}`}>
