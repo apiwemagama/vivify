@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const MovieList = ({ endpoint, query }) => {
     const [movies, setMovies] = useState([]);
@@ -9,6 +9,9 @@ const MovieList = ({ endpoint, query }) => {
     const [backdropPath, setBackdropPath] = useState('');
     const [originalTitle, setOriginalTitle] = useState('');
     const [tagLine, setTagLine] = useState('');
+    const location = useLocation();
+    
+    const shouldHideContent = location.pathname === '/search'
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -26,39 +29,56 @@ const MovieList = ({ endpoint, query }) => {
         fetchMovies();
     }, [endpoint, page, query]);
     useEffect(() => {
-        const fetchBackdrop = async () => {
+        const fetchRandomBackdrop = async () => {
             try {
-                const response = await axios.get(`https://api.themoviedb.org/3/movie/912649?api_key=07a603be26fe82fc8a9b9764a6d43b15`);
-                setBackdropPath(response.data.backdrop_path);
-                setOriginalTitle(response.data.original_title);
-                setTagLine(response.data.tagline);
+                // Fetch a list of popular movies
+                const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=07a603be26fe82fc8a9b9764a6d43b15`);
+                
+                // Get the results array
+                const movies = response.data.results;
+
+                // Select a random movie from the array
+                if (movies.length > 0) {
+                    const randomIndex = Math.floor(Math.random() * movies.length);
+                    const randomMovie = movies[randomIndex];
+
+                    // Update state with the random movie's details
+                    setBackdropPath(randomMovie.backdrop_path);
+                    setOriginalTitle(randomMovie.original_title);
+                    setTagLine(randomMovie.tag_line);
+                }
             } catch (error) {
                 console.error('Error fetching backdrop', error);
             }
         };
 
-        fetchBackdrop();
+        fetchRandomBackdrop();
     }, []);
     return (
         <div>
+        {!shouldHideContent && (
             <header className="text-white relative">
                 <div className="mx-auto">
                     {backdropPath && (
-                        <img 
-                            className="w-full h-100 object-cover mb-4" 
-                            src={`https://image.tmdb.org/t/p/w500${backdropPath}`} 
-                            alt="Backdrop" 
-                        />
+                        <div>
+                            <img 
+                                className="w-full h-100 object-cover mb-4" 
+                                src={`https://image.tmdb.org/t/p/w500${backdropPath}`} 
+                                alt="Backdrop" 
+                            />
+                            <div className="absolute inset-0 flex flex-col justify-center items-start px-4 bg-black bg-opacity-50"> {/* Overlay for text */}
+                                <h1 className="text-3xl font-bold mb-2">{originalTitle}</h1>
+                                <h2 className="text-lg mb-4">{tagLine}</h2>
+                                <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow">
+                                    Trailer
+                                </button>
+                            </div>
+                        </div>
                     )}
-                    <div className="absolute inset-0 flex flex-col justify-center items-start px-4 bg-black bg-opacity-50"> {/* Overlay for text */}
-                        <h1 className="text-3xl font-bold mb-2">{originalTitle}</h1>
-                        <h2 className="text-lg mb-4">{tagLine}</h2>
-                        <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow">
-                            Trailer
-                        </button>
-                    </div>
+                    
                 </div>
             </header>
+            )}
             <div className="container mx-auto px-4">
                 <div className="font-bold text-white text-xl py-4">Continue watching</div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">

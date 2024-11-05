@@ -20,7 +20,7 @@ const Search = () => {
                     onChange={(e) => setQuery(e.target.value)} 
                     placeholder="Search for a movie" 
                 />
-                <button type="submit">Search</button>
+                <button type="submit" className="bg-blue-500">Search</button>
             </form>
             {submittedQuery && <MovieList endpoint="search" query={submittedQuery} />}
         </div>
