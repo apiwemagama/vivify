@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="text-white text-xl font-semibold">
-            App
+            Aurora
         </Link>
 
         {/* Burger Icon */}

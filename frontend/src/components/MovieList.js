@@ -8,7 +8,9 @@ const MovieList = ({ endpoint, query }) => {
     const [totalPages, setTotalPages] = useState(1);
     const [backdropPath, setBackdropPath] = useState('');
     const [originalTitle, setOriginalTitle] = useState('');
-    const [tagLine, setTagLine] = useState('');
+    const [voteAverage, setVoteAverage] = useState('');
+    const [originalLanguage, setOriginalLanguage] = useState('');
+    
     const location = useLocation();
     
     const shouldHideContent = location.pathname === '/search'
@@ -45,7 +47,6 @@ const MovieList = ({ endpoint, query }) => {
                     // Update state with the random movie's details
                     setBackdropPath(randomMovie.backdrop_path);
                     setOriginalTitle(randomMovie.original_title);
-                    setTagLine(randomMovie.tag_line);
                 }
             } catch (error) {
                 console.error('Error fetching backdrop', error);
@@ -67,10 +68,9 @@ const MovieList = ({ endpoint, query }) => {
                                 alt="Backdrop" 
                             />
                             <div className="absolute inset-0 flex flex-col justify-center items-start px-4 bg-black bg-opacity-50"> {/* Overlay for text */}
-                                <h1 className="text-3xl font-bold mb-2">{originalTitle}</h1>
-                                <h2 className="text-lg mb-4">{tagLine}</h2>
+                                <h1 className="text-3xl font-bold mb-5">{originalTitle}</h1>
                                 <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow">
-                                    Trailer
+                                    Watch Trailer
                                 </button>
                             </div>
                         </div>
