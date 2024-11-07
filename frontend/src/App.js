@@ -5,6 +5,7 @@ import All from './components/All';
 import Search from './components/Search';
 import MovieDetails from './components/MovieDetails';
 import Favourites from './components/Favourites';
+import Footer from './components/Footer';
 import './App.css';
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
                     <Route path="/movie/:id" element={<MovieDetails />} />
                     <Route path="/favourites" element={<Favourites />} />
                 </Routes>
+                <Footer />
             </div>
         </Router>              
     );
