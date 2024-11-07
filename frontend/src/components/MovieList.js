@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useLocation } from 'react-router-dom';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 const MovieList = ({ endpoint, query }) => {
     const [movies, setMovies] = useState([]);
@@ -69,7 +70,7 @@ const MovieList = ({ endpoint, query }) => {
                             />
                             <div className="absolute inset-0 flex flex-col justify-center items-start px-4 bg-black bg-opacity-50"> {/* Overlay for text */}
                                 <h1 className="text-3xl font-bold mb-5">{originalTitle}</h1>
-                                <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow">
+                                <button className="bg-[#ff6900] hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow">
                                     Watch Trailer
                                 </button>
                             </div>
@@ -100,19 +101,20 @@ const MovieList = ({ endpoint, query }) => {
                         <button 
                             disabled={page === 1} 
                             onClick={() => setPage(page - 1)} 
-                            className={`px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 ${page === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            className={`px-4 py-2 text-white bg-[#ff6900] rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 ${page === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
                         >
-                            Previous
+                            <ChevronLeftIcon className="h-6 w-6 text-white" />
                         </button>
+
 
                         <span className="text-gray-700">Page {page} of {totalPages}</span>
 
                         <button 
                             disabled={page === totalPages} 
                             onClick={() => setPage(page + 1)} 
-                            className={`px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 ${page === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            className={`px-4 py-2 text-white bg-[#ff6900] rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 ${page === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
                         >
-                            Next
+                            <ChevronRightIcon className="h-6 w-6 text-white" />
                         </button>
                     </div>
                 </div>
