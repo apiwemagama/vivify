@@ -42,11 +42,11 @@ const Footer = () => {
                         <p>Help</p>
                     </div>
                 </div>
-                <div className="grid grid-cols-4 gap-4 ">
+                <div className="grid grid-cols-4 gap-4 pt-6">
                     {/* Follow us section */}
                     <div className="mb-6 md:mb-0">
                         <h5 className="text-lg font-semibold mb-2">FOLLOW US</h5>
-                        <div className="flex">
+                        <div className="flex space-x-4">
                             <a href="#" aria-label="Facebook" className="hover:text-gray-400">
                                 <FaFacebookF />
                             </a>
