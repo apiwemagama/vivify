@@ -15,9 +15,7 @@ const Footer = () => {
                             <li><a href="/search" className="hover:text-gray-400">Search</a></li>
                             <li><a href="/login" className="hover:text-gray-400">Login</a></li>
                         </ul>
-                        
                     </div>
-
                     {/* Contact Section */}
                     <div className="mb-6 md:mb-0">
                         <h5 className="text-lg font-semibold mb-2">OVERVIEW</h5>
@@ -31,7 +29,6 @@ const Footer = () => {
                         <p>Global Sitemap</p>
                         <p>Local Sitemap</p>
                     </div>
-                    
                     <div className="mb-6 md:mb-0">
                         <h5 className="text-lg font-semibold mb-2">COMMUNITY</h5>
                         <p>Community Central</p>
@@ -43,11 +40,10 @@ const Footer = () => {
                         <p>Community Central</p>
                         <p>Support</p>
                         <p>Help</p>
-                        
                     </div>
                 </div>
                 <div className="grid grid-cols-4 gap-4 ">
-                    {/* Links Section */}
+                    {/* Follow us section */}
                     <div className="mb-6 md:mb-0">
                         <h5 className="text-lg font-semibold mb-2">FOLLOW US</h5>
                         <div className="flex">
@@ -65,29 +61,14 @@ const Footer = () => {
                             </a>
                         </div>
                     </div>
-
-                    {/* Contact Section */}
+                    {/* Advertise section */}
                     <div className="mb-6 md:mb-0">
                         <h5 className="text-lg font-semibold mb-2">ADVERTISE</h5>
                         <p>Media Kit</p>
                         <p>Contact</p>
                     </div>
-                    
-                    <div className="mb-6 md:mb-0">
-                        <h5 className="text-lg font-semibold mb-2">COMMUNITY</h5>
-                        <p>Community Central</p>
-                        <p>Support</p>
-                        <p>Help</p>
-                    </div>
-                    
-                    <div className="mb-6 md:mb-0">
-                        <h5 className="text-lg font-semibold mb-2">COMMUNITY</h5>
-                        <p>Community Central</p>
-                        <p>Support</p>
-                        <p>Help</p>
-                    </div>
                 </div>
-                {/* Copyright Section */}
+                {/* Copyright section */}
                 <div className="mt-6 text-center border-t border-gray-700 pt-4">
                     <p>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p>
                 </div>
