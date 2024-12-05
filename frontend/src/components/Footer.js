@@ -3,31 +3,54 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/f
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 text-white py-6">
+        <footer className="bg-black-800 text-white py-6">
             <div className="container mx-auto px-4">
-                <div className="flex flex-col md:flex-row justify-between">
+                <div className="grid grid-cols-4 gap-4">
                     {/* Links Section */}
                     <div className="mb-6 md:mb-0">
-                        <h5 className="text-lg font-semibold mb-2">Quick Links</h5>
+                        <h5 className="text-lg font-semibold mb-2">COMPANY</h5>
                         <ul>
-                            <li><a href="/" className="hover:text-gray-400">Home</a></li>
-                            <li><a href="/about" className="hover:text-gray-400">About Us</a></li>
-                            <li><a href="/services" className="hover:text-gray-400">Services</a></li>
-                            <li><a href="/contact" className="hover:text-gray-400">Contact</a></li>
+                            <li><a href="/" className="hover:text-gray-400">All</a></li>
+                            <li><a href="/favourites" className="hover:text-gray-400">Favourites</a></li>
+                            <li><a href="/search" className="hover:text-gray-400">Search</a></li>
+                            <li><a href="/login" className="hover:text-gray-400">Login</a></li>
                         </ul>
+                        
                     </div>
 
                     {/* Contact Section */}
                     <div className="mb-6 md:mb-0">
-                        <h5 className="text-lg font-semibold mb-2">Contact Us</h5>
-                        <p>Email: info@example.com</p>
-                        <p>Phone: (123) 456-7890</p>
+                        <h5 className="text-lg font-semibold mb-2">OVERVIEW</h5>
+                        <p>About</p>
+                        <p>Careers</p>
+                        <p>Press</p>
+                        <p>Contact</p>
+                        <p>Afilliates</p>
+                        <p>Terms of Use</p>
+                        <p>Privacy Policy</p>
+                        <p>Global Sitemap</p>
+                        <p>Local Sitemap</p>
                     </div>
-
-                    {/* Social Media Section */}
-                    <div>
-                        <h5 className="text-lg font-semibold mb-2">Follow Us</h5>
-                        <div className="flex space-x-4">
+                    
+                    <div className="mb-6 md:mb-0">
+                        <h5 className="text-lg font-semibold mb-2">COMMUNITY</h5>
+                        <p>Community Central</p>
+                        <p>Support</p>
+                        <p>Help</p>
+                    </div>
+                    <div className="mb-6 md:mb-0">
+                        <h5 className="text-lg font-semibold mb-2">COMMUNITY</h5>
+                        <p>Community Central</p>
+                        <p>Support</p>
+                        <p>Help</p>
+                        
+                    </div>
+                </div>
+                <div className="grid grid-cols-4 gap-4 ">
+                    {/* Links Section */}
+                    <div className="mb-6 md:mb-0">
+                        <h5 className="text-lg font-semibold mb-2">FOLLOW US</h5>
+                        <div className="flex">
                             <a href="#" aria-label="Facebook" className="hover:text-gray-400">
                                 <FaFacebookF />
                             </a>
@@ -42,8 +65,28 @@ const Footer = () => {
                             </a>
                         </div>
                     </div>
-                </div>
 
+                    {/* Contact Section */}
+                    <div className="mb-6 md:mb-0">
+                        <h5 className="text-lg font-semibold mb-2">ADVERTISE</h5>
+                        <p>Media Kit</p>
+                        <p>Contact</p>
+                    </div>
+                    
+                    <div className="mb-6 md:mb-0">
+                        <h5 className="text-lg font-semibold mb-2">COMMUNITY</h5>
+                        <p>Community Central</p>
+                        <p>Support</p>
+                        <p>Help</p>
+                    </div>
+                    
+                    <div className="mb-6 md:mb-0">
+                        <h5 className="text-lg font-semibold mb-2">COMMUNITY</h5>
+                        <p>Community Central</p>
+                        <p>Support</p>
+                        <p>Help</p>
+                    </div>
+                </div>
                 {/* Copyright Section */}
                 <div className="mt-6 text-center border-t border-gray-700 pt-4">
                     <p>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p>
