@@ -73,7 +73,7 @@ const MovieList = ({ endpoint, query }) => {
                             <div className="absolute inset-0 flex flex-col justify-center items-start px-4 bg-black bg-opacity-50"> {/* Overlay for text */}
                                 <h1 className="text-3xl font-bold mb-5">{originalTitle}</h1>
                                 <Link to={`/movie/${id}`}>
-                                    <button className="bg-[#ff6900] hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow">
+                                    <button className="bg-[#ff6900] hover:bg-[#ff9200] text-white font-semibold py-2 px-4 rounded-lg shadow">
                                         Watch Trailer
                                     </button>
                                 </Link>
@@ -105,7 +105,7 @@ const MovieList = ({ endpoint, query }) => {
                         <button 
                             disabled={page === 1} 
                             onClick={() => setPage(page - 1)} 
-                            className={`px-4 py-2 text-white bg-[#ff6900] rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 ${page === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            className={`px-4 py-2 text-white bg-[#ff6900] rounded-lg hover:bg-[#ff9200] focus:outline-none focus:ring-2 focus:ring-blue-400 ${page === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
                         >
                             <ChevronLeftIcon className="h-6 w-6 text-white" />
                         </button>
@@ -116,7 +116,7 @@ const MovieList = ({ endpoint, query }) => {
                         <button 
                             disabled={page === totalPages} 
                             onClick={() => setPage(page + 1)} 
-                            className={`px-4 py-2 text-white bg-[#ff6900] rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 ${page === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            className={`px-4 py-2 text-white bg-[#ff6900] rounded-lg hover:bg-[#ff9200] focus:outline-none focus:ring-2 focus:ring-blue-400 ${page === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
                         >
                             <ChevronRightIcon className="h-6 w-6 text-white" />
                         </button>
