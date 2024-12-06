@@ -36,7 +36,10 @@ const MovieDetails = () => {
 
     return (
         <div className="container mx-auto px-4 py-8">
-            
+            <div className="grid grid-cols-12 gap-4 p-4">
+                <div className="col-span-2 bg-blue-200 p-4">Column 1</div>
+                <div className="col-span-10 bg-green-200 p-4">Column 2</div>
+            </div>
 
             <h1 className="text-3xl font-bold mb-4">{movie.title}</h1>
             <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className="w-full mb-4" />
