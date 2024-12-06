@@ -6,12 +6,15 @@ const MovieDetails = () => {
     const { id } = useParams();
     const [movie, setMovie] = useState(null);
     const [error, setError] = useState('');
+    const [genres, setGenres] = useState([]);
 
     useEffect(() => {
         const fetchMovieDetails = async () => {
             try {
                 const response = await axios.get(`http://localhost:3000/api/movie/${id}`);
                 setMovie(response.data);
+                setGenres(response.data.genres);
+                
             } catch (error) {
                 console.error('Error fetching movie details:', error.message);
                 setError('Failed to load movie details.');
@@ -43,7 +46,13 @@ const MovieDetails = () => {
                 <div className="col-span-9 bg-green-200 p-4">
                     <h1 className="text-3xl font-bold mb-4">{movie.title}</h1>
                     <div className="grid grid-cols-12 gap-4 p-4">
-                        <div className="col-span-6 bg-red p-4">A</div>
+                        
+                        <div className="col-span-6 bg-red p-4">
+                        {genres.map(genre => (
+                            <span>{genre.name}</span>
+                        ))}
+                        </div>
+                        
                         <div className="col-span-6 bg-red p-4">B</div>
                     </div>
                 </div>
