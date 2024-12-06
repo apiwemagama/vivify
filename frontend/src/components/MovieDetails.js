@@ -44,22 +44,18 @@ const MovieDetails = () => {
                     <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className="w-full mb-4" />
                 </div>
                 <div className="col-span-9 bg-green-200 p-4">
-                    <h1 className="text-3xl font-bold mb-4">{movie.title}</h1>
-                    <div className="grid grid-cols-12 gap-4 p-4">
+                    <h1 className="text-3xl text-white font-bold mb-4">{movie.title}</h1>
+                    <div className="grid grid-cols-12 gap-4">
+                        <div className="space-x-4 col-span-6 bg-black-200">
                         
-                        <div className="col-span-6 bg-red p-4">
                         {genres.map(genre => (
-                            <span>{genre.name}</span>
+                            <span className="badge bg-gray-500 text-white rounded-full pt-1 pl-4 pb-2 pr-4 ">{genre.name}</span>
                         ))}
                         </div>
-                        
                         <div className="col-span-6 bg-red p-4">B</div>
                     </div>
                 </div>
-                
             </div>
-
-            
             
             <p className="mb-4">{movie.overview}</p>
             <p className="mb-2">Release Date: {movie.release_date}</p>
