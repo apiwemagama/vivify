@@ -2,19 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/xampp/htdocs/moviedb/frontend/src/components/Navbar.js</file>
-            <file>file:/C:/xampp/htdocs/moviedb/frontend/tailwind.config.js</file>
-            <file>file:/C:/xampp/htdocs/moviedb/frontend/src/index.css</file>
-            <file>file:/C:/xampp/htdocs/moviedb/frontend/src/components/All.js</file>
-            <file>file:/C:/xampp/htdocs/moviedb/frontend/src/components/MovieDetails.js</file>
-            <file>file:/C:/xampp/htdocs/moviedb/backend/app.js</file>
-            <file>file:/C:/xampp/htdocs/moviedb/frontend/src/App.js</file>
-            <file>file:/C:/xampp/htdocs/moviedb/frontend/src/components/MovieList.js</file>
-            <file>file:/C:/xampp/htdocs/moviedb/frontend/src/components/Footer.js</file>
-            <file>file:/C:/xampp/htdocs/moviedb/frontend/src/index.js</file>
-            <file>file:/C:/xampp/htdocs/moviedb/frontend/src/App.css</file>
-            <file>file:/C:/xampp/htdocs/moviedb/frontend/src/components/Search.js</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
